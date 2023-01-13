@@ -1,0 +1,17 @@
+@model System.Diagnostics.Process[]
+@{
+    ViewData["Title"] = "Proccesses";
+}
+
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a asp-controller="Process" asp-action="Display"
+                    asp-route-id="@item.Id">@item.ProcessName</a>
+            </li>
+        }
+    </ul>
+</div>
