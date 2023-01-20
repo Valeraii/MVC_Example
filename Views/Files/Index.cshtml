@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Files";
+    ViewData["Title"] = "Text Files";
     string[]? fileNames = ViewData["fileNames"] as string[];
 }
 
@@ -9,7 +9,7 @@
         @foreach (var item in fileNames!)
         {
             <li>
-                <a asp-controller="File" asp-action="Content"
+                <a asp-controller="Files" asp-action="Content"
                     asp-route-id="@item">@item</a>
             </li>
         }

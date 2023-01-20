@@ -8,13 +8,14 @@ using Microsoft.Extensions.Logging;
 
 namespace MVC_Example.Controllers
 {
-    public class FileController : Controller
+    public class FilesController : Controller
     {
         // GET: File
         public ActionResult Index()
         {
             string[] files = Directory.GetFiles("TextFiles").Select(file =>
                 Path.GetFileNameWithoutExtension(file)).ToArray();
+            ViewData["fileNames"] = files;
             return View(files);
         }
 
