@@ -14,7 +14,7 @@ namespace MVC_Example.Controllers
         public ActionResult Index()
         {
             string[] files = Directory.GetFiles("TextFiles").Select(file =>
-            Path.GetFileNameWithoutExtension(file)).ToArray();
+                Path.GetFileNameWithoutExtension(file)).ToArray();
             return View(files);
         }
 
